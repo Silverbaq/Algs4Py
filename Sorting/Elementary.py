@@ -45,7 +45,7 @@ class Shell:
 
 
 # Helper functions
-def less(v ,w):
+def less(v, w):
     return v < w
 
 
