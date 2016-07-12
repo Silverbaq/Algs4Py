@@ -3,7 +3,7 @@ class TopDownMerge:
     def sort(self, a):
         aux = [None] * len(a)
         self.sort2(a, aux, 0, len(a)-1)
-        return aux
+        return a
 
     def sort2(self, a, aux, lo, hi):
         if hi <= lo:
@@ -29,7 +29,7 @@ def merge(a, aux, lo, mid, hi):
         aux[k] = a[k]
 
     # Merge back to a[lo..hi].
-    for k in range(lo, hi):
+    for k in range(lo, hi+1):
         if i > mid:
             a[k] = aux[j]
             j += 1
@@ -51,6 +51,6 @@ def less(v, w):
 
 
 ## TEST
-a = [3,1,6,4,9,7,10,5]
+a = [3,1,6,4,9,7,10,5,2]
 m = TopDownMerge()
 print m.sort(a)
